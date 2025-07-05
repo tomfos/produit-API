@@ -1,24 +1,19 @@
 package com.stockDe.produit.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Table(name = "produit")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Produit {
+
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
+
     private String name;
     private double price;
 }

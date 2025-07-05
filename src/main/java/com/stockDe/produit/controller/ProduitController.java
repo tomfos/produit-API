@@ -32,4 +32,20 @@ public class ProduitController {
     public Produit createProduit(@RequestBody Produit produit) {
         return produitService.createProduit(produit);
     }
+
+    @GetMapping("{id}")
+    public Produit getProduitById(@PathVariable long id) {
+        return produitService.getProduitById(id);
+    }
+
+    @DeleteMapping("/supprimer/{id}")
+    public String deleteProduitById(@PathVariable long id) {
+        return produitService.deleteProduitById(id);
+    }
+
+    @PutMapping("{id}")
+    public Produit modifierProduit(@PathVariable long id, @RequestBody Produit produit) {
+        return produitService.modificationDuProdiut(id, produit);
+    }
+
 }
